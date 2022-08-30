@@ -8,6 +8,7 @@ class Dealership < ApplicationRecord
     self.order(    created_at: :desc)
   end
 
-  def Dealership.count
+  def child_count
+    self.cars.count
   end
 end

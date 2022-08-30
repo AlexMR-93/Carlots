@@ -10,7 +10,11 @@ RSpec.describe(Dealership) do
     @car3 = @dealership.cars.create!(    name: "Toyota Corolla",     color: "yellow",     price: 7000,     miles: 789,     domestic: false)
   end
 
-  it("6.can order dealerships by most recently created") do
+  xit("6.can order dealerships by most recently created") do
     expect(Dealership.order_desc_created).to(eq([@dealership, @dealership2]))
+  end
+
+  it("7.it can count the number of childen(cars)") do
+    expect(@dealership.child_count).to(eq(3))
   end
 end
