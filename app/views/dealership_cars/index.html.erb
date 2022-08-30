@@ -1,0 +1,11 @@
+<div class="cars">
+ <%@cars.each do |car|%>
+  <div id="car-<%= car.id%>">
+    car name:<%= car.name%>
+    car color:<%= car.color%>
+    car price:<%= car.price%>
+    car miles:<%= car.miles%>
+    car domestic:<%= car.domestic%>
+  </div>
+  <%end%>
+</div>

@@ -15,7 +15,7 @@ RSpec.describe("dealership index", type: :feature) do
 #When I visit '/parents'
 #Then I see the name of each parent record in the system
   it(" 1.name of dealership") do
-    visit("/dealership")
+    visit("/dealerships")
     expect(page).to(have_content(@dealership1.name))
   end
 end

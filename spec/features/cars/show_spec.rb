@@ -1,7 +1,7 @@
 require "rails_helper"
 
 
-RSpec.describe("dealership show", type: :feature) do
+RSpec.describe("car show", type: :feature) do
   before(:each) do
     @dealership = Dealership.create!(    name: "the amazing dealership",     num_of_cars_on_lot: 3,     full: false)
     @car1 = @dealership.cars.create!(    name: "Ford Focus",     color: "blue",     price: 5000,     miles: 123,     domestic: true)
@@ -9,13 +9,12 @@ RSpec.describe("dealership show", type: :feature) do
     @car3 = @dealership.cars.create!(    name: "Toyota Corolla",     color: "yellow",     price: 7000,     miles: 789,     domestic: false)
   end
 
-  #User Story 2, Parent Show
-#As a visitor
-#When I visit '/parents/:id'
-#Then I see the parent with that id including the parent's attributes:
-#- data from each column that is on the parent table
-  visit("/dealership/#{dealership.id}")
-  expect(page).to(have_content(dealership.name))
-  expect(page).to(have_content(dealership.num_of_models))
-  expect(page).to(have_content(dealership.full))
+  it("4.see car attribues") do
+    visit("/cars/#{@car1.id}")
+    expect(page).to(have_content(@car1.name))
+    expect(page).to(have_content(@car1.color))
+    expect(page).to(have_content(@car1.price))
+    expect(page).to(have_content(@car1.miles))
+    expect(page).to(have_content(@car1.domestic))
+  end
 end
