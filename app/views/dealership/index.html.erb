@@ -1,1 +1,6 @@
-<h1> the amazing dealership </h1>
+<h1>@dealership</h1>
+<ul>
+  <% @dealerships.each do |dealership| %>
+      <li><%= link_to dealership.name,"/dealership/#{dealership.id}"%></li>
+  <% end %>
+</ul>
