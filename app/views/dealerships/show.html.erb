@@ -2,7 +2,7 @@
 <%= link_to "Back to all Cars", cars_path(@car) %>
 <%= link_to "Back to all Dealerships", dealerships_path(@dealership) %>
 
-
-<p>Name:<%= @dealership.name %></p>
+<h3>Name:<%= @dealership.name %></h3>
 <p>Number of cars on lot:<%=@dealership.num_of_cars_on_lot%>
 <p>Dealership full? <%=@dealership.full%>
+<%= button_to "Cars Available","/dealership/#{@dealership.id}/cars", method: :get %>
