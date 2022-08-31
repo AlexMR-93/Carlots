@@ -13,4 +13,15 @@ RSpec.describe("car index", type: :feature) do
     visit("/cars")
     expect(page).to(have_content(@car1.name))
   end
+
+  it("8 link at the top of the page that takes me to the Child Index") do
+    visit("/cars/#{@car1.id}")
+    expect(page).to(have_link("Back to all Cars"))
+    visit("/cars")
+    expect(page).to(have_link("Home Cars"))
+    visit("/")
+    expect(page).to(have_link("All Cars"))
+    visit("/dealership/#{@dealership.id}")
+    expect(page).to(have_link("Back to all Cars"))
+  end
 end
