@@ -9,8 +9,8 @@ RSpec.describe("car index", type: :feature) do
     @car3 = @dealership.cars.create!(    name: "Toyota Corolla",     color: "yellow",     price: 7000,     miles: 789,     domestic: false)
   end
 
-  it("5. each dealerships cars") do
-    visit("/dealerships/#{@dealership.id}/cars")
+  it("5. I see each Child that is associated with that Parent with each Child's attributes") do
+    visit("/dealership/#{@dealership.id}/cars")
 
     within(".cars") do
       within("#car-#{@car1.id}") do
@@ -21,5 +21,8 @@ RSpec.describe("car index", type: :feature) do
         expect(page).to(have_content(@car1.domestic))
       end
     end
+  end
+
+  it("10.a link to take me to that parent's `child_table_name` page") do
   end
 end

@@ -1,11 +1,16 @@
+<%= link_to "Back to Cars", cars_path(@cars) %>
+<%= link_to "Back to Dealerships", dealerships_path(@dealership) %>
+
+
 <div class="cars">
+
  <%@cars.each do |car|%>
   <div id="car-<%= car.id%>">
-    car name:<%= car.name%>
-    car color:<%= car.color%>
-    car price:<%= car.price%>
-    car miles:<%= car.miles%>
-    car domestic:<%= car.domestic%>
+  <h3><%= car.name%></h3>
+    <p>color:<%= car.color%></p>
+    <p>price:<%= car.price%></p>
+    <p>miles:<%= car.miles%></p>
+    <p>domestic:<%= car.domestic%>
   </div>
   <%end%>
 </div>

@@ -1,4 +1,7 @@
 <h1>all dealerships</h1>
+<%= link_to "All Cars", cars_path(@car) %>
+<%= link_to "Home Dealerships", dealerships_path(@dealership) %>
+
 <ul>
 
   <% @dealerships.each do |dealership| %>
@@ -7,4 +10,3 @@
         <p>number of cars: <%= dealership.child_count%></p>
   <% end %>
 </ul>
-  

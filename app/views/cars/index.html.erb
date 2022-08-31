@@ -1,4 +1,6 @@
 <h1>Cars</h1>
+<%= link_to "Home Cars", cars_path(@car) %>
+<%= link_to "Dealerships", dealerships_path(@dealership) %>
 <ul>
   <% @cars.each do |car| %>
       <li><%= link_to car.name,"/cars/#{car.id}"%></li>
