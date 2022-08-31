@@ -10,7 +10,7 @@ RSpec.describe("car index", type: :feature) do
   end
 
   it("5. each dealerships cars") do
-    visit("/dealerships/#{@dealership.id}/cars")
+    visit("/dealership/#{@dealership.id}/cars")
 
     within(".cars") do
       within("#car-#{@car1.id}") do
