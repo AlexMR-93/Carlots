@@ -1,0 +1,14 @@
+<h1>Create a new Dealership</h1>
+
+<%= form_with url: "/dealerships", method: :post, local: true do |form| %>
+  <h4><%= form.label :name, "Name of New Dealership:" %></h4>
+  <%= form.text_field :name %>
+  <h4><%= form.label :num_of_cars_on_lot, "Number of cars on lot:" %></h4>
+  <%= form.text_field :num_of_cars_on_lot %>
+  <p><%= form.label :full, "Is lot full? :" %>
+  <%= form.radio_button :full, true %>
+  <%= form.label :full, "Yes!" %>
+  <%= form.radio_button :full, false %>
+  <%= form.label :full, "No" %>
+  <p><%= form.submit "Create new Dealership" %>
+  <% end %>
