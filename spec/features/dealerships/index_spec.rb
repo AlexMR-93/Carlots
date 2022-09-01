@@ -15,13 +15,13 @@ RSpec.describe("dealership index", type: :feature) do
   end
 
   it("9.link at the top of the page that takes me to the Parent Index") do
-    visit("/dealership/#{@dealership.id}/cars")
+    visit("/dealerships/#{@dealership.id}/cars")
     expect(page).to(have_link("Back to Dealerships"))
     visit("/cars")
     expect(page).to(have_link("Dealerships"))
     visit("/")
     expect(page).to(have_link("Home Dealerships"))
-    visit("/dealership/#{@dealership.id}")
+    visit("/dealerships/#{@dealership.id}")
     expect(page).to(have_link("Back to all Dealerships"))
     visit("/dealerships")
     expect(page).to(have_link("Home Dealerships"))

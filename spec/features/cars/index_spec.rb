@@ -9,7 +9,7 @@ RSpec.describe("car index", type: :feature) do
     @car3 = @dealership.cars.create!(    name: "Toyota Corolla",     color: "yellow",     price: 7000,     miles: 789,     domestic: false)
   end
 
-  it(" 3.name of carsß") do
+  it(" 3.name of cars") do
     visit("/cars")
     expect(page).to(have_content(@car1.name))
   end
@@ -21,7 +21,7 @@ RSpec.describe("car index", type: :feature) do
     expect(page).to(have_link("Home Cars"))
     visit("/")
     expect(page).to(have_link("All Cars"))
-    visit("/dealership/#{@dealership.id}")
+    visit("/dealerships/#{@dealership.id}")
     expect(page).to(have_link("Back to all Cars"))
   end
 end

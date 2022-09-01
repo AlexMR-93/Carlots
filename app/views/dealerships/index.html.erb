@@ -5,8 +5,9 @@
 <ul>
 
   <% @dealerships.each do |dealership| %>
-      <li><%= link_to dealership.name,"/dealership/#{dealership.id}"%></li>
+      <li><%= link_to dealership.name,"/dealerships/#{dealership.id}"%></li>
         <p>Created at: <%= dealership.created_at%></p>
         <p>number of cars: <%= dealership.child_count%></p>
   <% end %>
 </ul>
+<%= link_to "Create new Dealership", "/dealerships/new", method: :get %>
